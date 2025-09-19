@@ -1,6 +1,6 @@
 # FasGen
 Fast Api Secure Generator 
-
+```
 FasGen new <project-name> [options]
 
 Options:
@@ -13,3 +13,4 @@ Options:
   --port <n>            API port (default: 8000)
   --py <ver>            Python version for Docker (default: 3.13.2)
   -h, --help            Show help
+```
