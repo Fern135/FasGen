@@ -1,0 +1,6 @@
+{
+    "name": "fasg",
+    "version": "0.1.0",
+    "bin": { "fasg": "./fasgen.js" },
+    "private": true
+}
