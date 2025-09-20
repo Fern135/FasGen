@@ -42,17 +42,31 @@ function parseArgs(argv) {
   const args = { _: [] };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
-    if (a === "-h" || a === "--help") args.help = true;
-    else if (a === "-d" || a === "--docker") args.docker = true;
-    else if (a === "--psg") args.psg = true;
-    else if (a === "--msql") args.msql = true;
-    else if (a === "--redis") args.redis = true;
-    else if (a === "--ngnx") args.ngnx = true;
-    else if (a === "--ci") args.ci = true;
-    else if (a === "--port") { args.port = Number(argv[++i]); }
-    else if (a === "--py") { args.py = String(argv[++i]); }
-    else if (a.startsWith("-")) die(`Unknown option: ${a}`);
-    else args._.push(a);
+
+    switch (a) {
+      case "-h": case "--help": args.help = true; break;
+      case "-d": case "--docker": args.docker = true; break;
+      case "--psg": args.psg = true; break;
+      case "--msql": args.msql = true; break;
+      case "--redis": args.redis = true; break;
+      case "--ngnx": args.ngnx = true; break;
+      case "--ci": args.ci = true; break;
+      case "--port": args.port = Number(argv[++i]); break;
+      case "--py": args.py = String(argv[++i]); break;
+      default: args._.push(a);
+    }
+
+    // if (a === "-h" || a === "--help") args.help = true;
+    // else if (a === "-d" || a === "--docker") args.docker = true;
+    // else if (a === "--psg") args.psg = true;
+    // else if (a === "--msql") args.msql = true;
+    // else if (a === "--redis") args.redis = true;
+    // else if (a === "--ngnx") args.ngnx = true;
+    // else if (a === "--ci") args.ci = true;
+    // else if (a === "--port") { args.port = Number(argv[++i]); }
+    // else if (a === "--py") { args.py = String(argv[++i]); }
+    // else if (a.startsWith("-")) die(`Unknown option: ${a}`);
+    // else args._.push(a);
   }
   return args;
 }
