@@ -1,5 +1,12 @@
 # FasGen
 Fast Api Secure Generator 
+
+# step 1:
+## download or git clone 
+
+#step 2 -> run 
+npm link 
+
 ```
 FasGen new <project-name> [options]
 
